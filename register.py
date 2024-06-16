@@ -23,6 +23,4 @@ def sun_register(smap,res=0.7,missing=0.,order=3,method='scipy'):
     range_side = (center + np.array([-1, 1]) * smap.data.shape[0] / 2) * u.pix
     newmap = tempmap.submap(u.Quantity([range_side[0], range_side[0]]),top_right=u.Quantity([range_side[1], range_side[1]]) - 1 * u.pix,)
     newmap.meta["r_sun"] = newmap.meta["rsun_obs"] / newmap.meta["cdelt1"]
-    newmap.meta["lvl_num"] = 1.5
-    newmap.meta["bitpix"] = -64
     return newmap
