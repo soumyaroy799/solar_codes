@@ -31,9 +31,12 @@ def sun_register(smap,res=0.7* u.arcsec / u.pix,missing=None,order=3,method='sci
         newmap = tempmap.submap(u.Quantity([range_side[0], range_side[0]]),top_right=u.Quantity([range_side[1], range_side[1]]) - 1 * u.pix,)
     else:
         newmap = tempmap
-
-    newmap.meta["r_sun"] = newmap.meta["rsun_obs"] / newmap.meta["cdelt1"]
-    return newmap
+    try:
+        newmap.meta["r_sun"] = newmap.meta["rsun_obs"] / newmap.meta["cdelt1"]
+        return newmap
+    except KeyError:
+        pass
+        return newmap
 
 
 def sun_register_2(smap, res=0.7 * u.arcsec, missing=0., order=3, method='scipy'):
