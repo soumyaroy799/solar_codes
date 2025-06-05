@@ -2,7 +2,7 @@ from astropy import units as u
 from sunpy.map import Map
 import numpy as np
 
-def sun_register(smap,res=0.7* u.arcsec / u.pix,missing=None,order=3,method='scipy', clip=True):
+def sun_register(smap,res=0.7* u.arcsec / u.pix, recenter=True, missing=None, order=3, method='scipy', clip=True):
     """
     Co-registers observations with differet plate scale. Uses SunPy Map rotate function.
     smap: SunPy Mapsequence.
