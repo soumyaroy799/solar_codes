@@ -13,7 +13,7 @@ ser = a.jsoc.Series('aia.lev1_uv_24s') # The specific data series to be searched
 ## You will find the list in (a.jsoc.Series)
 notify_flag = a.jsoc.Notify('soumyaroy@iucaa.in') ## The account used to fetch the data
 
-fdir = '/Users/soumyaroy/Dres = Fido.search(time,a.jsoc.Series('aia.lev1_uv_24s'),a.Wavelength(1600*u.angstrom),a.jsoc.Notify('soumyaroy@iucaa.in'))ownloads/' ## Path where the data needs to be downloaded
+fdir = '/Users/soumyaroy/Downloads/' ## Path where the data needs to be downloaded
 
 res = Fido.search(time, ser, wv, notify_flag) ## Compiles the list of files
 
