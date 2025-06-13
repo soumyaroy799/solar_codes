@@ -31,7 +31,7 @@ def select_roi_with_mouse(sunpy_map):
     submap = sunpy_map.submap(bottom_left=bottom_left, top_right=top_right)
     return submap
 
-def main():
+if __name__=="__main__" :
     """
     # Loading the files and sorting an dtaking the first image as reference
     """
