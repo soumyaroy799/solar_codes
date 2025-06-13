@@ -1,6 +1,7 @@
 from matplotlib.widgets import RectangleSelector
 import matplotlib.pyplot as plt
 import astropy.units as u
+from sunpy.map import Map
 
 def select_roi_with_mouse(sunpy_map):
     fig = plt.figure()
@@ -21,8 +22,8 @@ def select_roi_with_mouse(sunpy_map):
         raise RuntimeError("ROI selection cancelled or failed.")
 
     x1, y1, x2, y2 = coords[0]
-    bottom_left = (min(x1, x2), min(y1, y2)) * u.pixel
-    top_right = (max(x1, x2), max(y1, y2)) * u.pixel
+    bottom_left = (min(x1, x2), min(y1, y2)) * u.pix
+    top_right = (max(x1, x2), max(y1, y2)) * u.pix
 
     submap = sunpy_map.submap(bottom_left=bottom_left, top_right=top_right)
     return submap
