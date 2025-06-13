@@ -13,7 +13,7 @@ def select_roi_with_mouse(sunpy_map):
     def onselect(eclick, erelease):
         coords.append((eclick.xdata, eclick.ydata, erelease.xdata, erelease.ydata))
 
-    RectangleSelector(ax, onselect, useblit=True,
+    toggle_selector = RectangleSelector(ax, onselect, useblit=True,
                       button=[1], minspanx=5, minspany=5, spancoords='pixels',
                       interactive=True)
     plt.show()
@@ -22,6 +22,7 @@ def select_roi_with_mouse(sunpy_map):
         raise RuntimeError("ROI selection cancelled or failed.")
 
     x1, y1, x2, y2 = coords[0]
+    
     bottom_left = (min(x1, x2), min(y1, y2)) * u.pix
     top_right = (max(x1, x2), max(y1, y2)) * u.pix
 
