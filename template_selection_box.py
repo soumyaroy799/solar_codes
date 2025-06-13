@@ -1,3 +1,6 @@
+# Author: Gowri A.
+# Email: gowri@iucaa.in
+
 from matplotlib.widgets import RectangleSelector
 import matplotlib.pyplot as plt
 import astropy.units as u
