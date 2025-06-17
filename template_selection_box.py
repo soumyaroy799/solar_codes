@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import astropy.units as u
 from sunpy.map import Map
 
-def select_roi_with_mouse(sunpy_map):
+def select_roi_with_mouse(sunpy_map, cmap=None, norm=None):
     fig = plt.figure()
     ax = fig.add_subplot(111, projection=sunpy_map)
     ax.set_title("Select ROI (click and drag) then close the window")
