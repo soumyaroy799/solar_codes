@@ -15,7 +15,10 @@ def sun_register(smap,res=0.7* u.arcsec / u.pix, recenter=True, missing=None, or
     [x_shp, y_shp] = smap.data.shape
 
     if((smap.scale[0] / res).round() != 1.0 * u.arcsec / u.pix):
-        scale = (smap.scale[0] / res) * res * u.arcsec
+        if(smap.scale[0]/res>0.5):
+            scale = (smap.scale[0] / res).round() * res * u.arcsec
+        else:
+            scale = (smap.scale[0]/res) * u.arcsec
     else:
         scale = res * u.arcsec
 
