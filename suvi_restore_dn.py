@@ -228,6 +228,7 @@ def suvi_restore_dn(
     ccd_temp = _get_index_value(index, "ccd_tmp1")
 
     # --- Instrument response ---
+
     response = suvi_approx_response(wvln, fw1, fw2, ccd_temp)
 
     response_factor = response[0]   # J / DN m^-2 sr^-1
